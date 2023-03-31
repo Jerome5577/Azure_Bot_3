@@ -190,7 +190,8 @@ class BookingDialog(CancelAndHelpDialog):
         # If Not OK
         else:
             logger.error(properties)
-            return await step_context.end_dialog(None)
+            
+        return await step_context.end_dialog(None)
 
     # ==== Ambiguous date ==== #
 
