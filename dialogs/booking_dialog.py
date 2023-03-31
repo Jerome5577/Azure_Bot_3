@@ -185,13 +185,13 @@ class BookingDialog(CancelAndHelpDialog):
         properties["return_date"] = booking_details.end_date
         properties["budget"] = booking_details.budget
         # If OK
-        if step_context.result:
+        if step_context.result == 1 :
             return await step_context.end_dialog(booking_details)
         # If Not OK
         else:
             logger.error(properties)
             
-        return await step_context.end_dialog()
+        return await step_context.end_dialog(None)
 
     # ==== Ambiguous date ==== #
 
