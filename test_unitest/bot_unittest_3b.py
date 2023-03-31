@@ -153,8 +153,7 @@ class Test_Bot_Activities_Test4(aiounittest.AsyncTestCase):
         tf_2 = await tf_1.send("toronto to whashington from 18/12/23 to 26/12/23 for 200 dollars")
         tf_3 = await tf_2.assert_reply("Please confirm, your travel from : Toronto to: Whashington depature date on : 2023-12-18 to the: 2023-12-26 and for a budget of : 200. (1) Yes or (2) No ")
         tf_4 = await tf_3.send("2")
-        tf_5 = await tf_4.assert_reply("Sorry for not helping you")
-        tf_6 = await tf_5.assert_reply("Can I do someting else for you?")
+        tf_6 = await tf_4.assert_reply("Can I do someting else for you?")
         tf_7 = await tf_6.send("I want to go from Paris to Seattle please!")
         tf_8 = await tf_7.assert_reply("Could you give me a date of departure?")
         tf_9 = await tf_8.send("22/08/2023")
@@ -164,12 +163,11 @@ class Test_Bot_Activities_Test4(aiounittest.AsyncTestCase):
         tf_13 = await tf_12.send("200 dollars")
         tf_14 = await tf_13.assert_reply("Please confirm, your travel from : Paris to: Seattle depature date on : 2023-08-22 to the: 2023-08-28 and for a budget of : 200 dollars. (1) Yes or (2) No")
         tf_15 = await tf_14.send("2")
-        tf_16 = await tf_15.assert_reply("Sorry for not helping you")
-        tf_17 = await tf_16.assert_reply("Can I do someting else for you?")
+        tf_17 = await tf_15.assert_reply("Can I do someting else for you?")
         tf_18 = await tf_17.send("toronto to washington")
         tf_19 = await tf_18.assert_reply("Could you give me a date of departure?")
         tf_20 = await tf_19.send("quit")
-        await tf_20.send("Cancelling")
+        await tf_20.assert_reply("Cancelling")
 
 
 
